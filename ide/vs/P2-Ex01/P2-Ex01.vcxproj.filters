@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+    <ItemGroup>
+        <Filter Include="Header Files">
+            <UniqueIdentifier>{E4979E52-7E15-46D2-80B4-7C58D554BAF5}</UniqueIdentifier>
+            <Extensions>h;hpp</Extensions>
+        </Filter>
+        <Filter Include="Source Files">
+            <UniqueIdentifier>{F20A0BCE-9344-482C-A1B8-C734C3AD725F}</UniqueIdentifier>
+            <Extensions>cpp;c</Extensions>
+        </Filter>
+        <Filter Include="Resource Files">
+            <UniqueIdentifier>{2F217777-6D7C-4D51-8A51-ADC828996E81}</UniqueIdentifier>
+            <Extensions>hlsl;jpg;jpeg;png;wav;mp3;ico;dds;rc;obj</Extensions>
+        </Filter>
+    </ItemGroup>
+    <ItemGroup>
+        <ClCompile Include="..\..\..\src\P2-Ex01\main.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\src\P2-Ex01\pch.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClInclude Include="..\..\..\src\P2-Ex01\main.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\pch.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\resource.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <None Include="..\..\..\src\P2-Ex01\app.ico">
+            <Filter>Resource Files</Filter>
+        </None>
+        <None Include="..\..\..\src\P2-Ex01\app.rc">
+            <Filter>Resource Files</Filter>
+        </None>
+        <None Include="..\..\..\src\P2-Ex01\small.ico">
+            <Filter>Resource Files</Filter>
+        </None>
+    </ItemGroup>
+</Project>
