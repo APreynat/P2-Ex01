@@ -2,32 +2,80 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
     <ItemGroup>
         <Filter Include="Header Files">
-            <UniqueIdentifier>{E4979E52-7E15-46D2-80B4-7C58D554BAF5}</UniqueIdentifier>
+            <UniqueIdentifier>{ACB8F101-3D5F-457D-95E5-D795CE20E801}</UniqueIdentifier>
             <Extensions>h;hpp</Extensions>
         </Filter>
         <Filter Include="Source Files">
-            <UniqueIdentifier>{F20A0BCE-9344-482C-A1B8-C734C3AD725F}</UniqueIdentifier>
+            <UniqueIdentifier>{974863DA-37A2-4FF4-A8D7-BC0E62755D45}</UniqueIdentifier>
             <Extensions>cpp;c</Extensions>
         </Filter>
         <Filter Include="Resource Files">
-            <UniqueIdentifier>{2F217777-6D7C-4D51-8A51-ADC828996E81}</UniqueIdentifier>
+            <UniqueIdentifier>{6DBD3F61-F00E-4F88-BB17-84DC8E5A26A8}</UniqueIdentifier>
             <Extensions>hlsl;jpg;jpeg;png;wav;mp3;ico;dds;rc;obj</Extensions>
         </Filter>
     </ItemGroup>
     <ItemGroup>
+        <ClCompile Include="..\..\..\src\P2-Ex01\Bishop.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\src\P2-Ex01\Board.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\src\P2-Ex01\ChessPiece.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\src\P2-Ex01\King.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\src\P2-Ex01\Knight.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
         <ClCompile Include="..\..\..\src\P2-Ex01\main.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\src\P2-Ex01\Pawn.cpp">
             <Filter>Source Files</Filter>
         </ClCompile>
         <ClCompile Include="..\..\..\src\P2-Ex01\pch.cpp">
             <Filter>Source Files</Filter>
         </ClCompile>
+        <ClCompile Include="..\..\..\src\P2-Ex01\Queen.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\src\P2-Ex01\Rook.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClInclude Include="..\..\..\src\P2-Ex01\Bishop.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\Board.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\ChessPiece.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\King.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\Knight.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
         <ClInclude Include="..\..\..\src\P2-Ex01\main.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\Pawn.h">
             <Filter>Header Files</Filter>
         </ClInclude>
         <ClInclude Include="..\..\..\src\P2-Ex01\pch.h">
             <Filter>Header Files</Filter>
         </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\Queen.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
         <ClInclude Include="..\..\..\src\P2-Ex01\resource.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\Rook.h">
             <Filter>Header Files</Filter>
         </ClInclude>
         <None Include="..\..\..\src\P2-Ex01\app.ico">
