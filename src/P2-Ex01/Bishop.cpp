@@ -14,8 +14,8 @@ bool Bishop::isValidMove(string newPosition, ChessPiece* grid[8][8]) const {
     int newCol = newPosition[0] - 'A';
 
     // Calculate the difference between current and new positions
-    int rowDiff = std::abs(newRow - currentRow);
-    int colDiff = std::abs(newCol - currentCol);
+    int rowDiff = abs(newRow - currentRow);
+    int colDiff = abs(newCol - currentCol);
 
     // Check if the move is diagonal
     bool diagonalMove = (rowDiff == colDiff);  // Same magnitude of change in row and column

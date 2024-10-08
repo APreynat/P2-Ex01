@@ -2,15 +2,15 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
     <ItemGroup>
         <Filter Include="Header Files">
-            <UniqueIdentifier>{ACB8F101-3D5F-457D-95E5-D795CE20E801}</UniqueIdentifier>
+            <UniqueIdentifier>{DE96CC1D-2B0A-4201-A957-A27A30389BC9}</UniqueIdentifier>
             <Extensions>h;hpp</Extensions>
         </Filter>
         <Filter Include="Source Files">
-            <UniqueIdentifier>{974863DA-37A2-4FF4-A8D7-BC0E62755D45}</UniqueIdentifier>
+            <UniqueIdentifier>{774BD9FC-97D5-4FFF-BBAE-EE023E794E32}</UniqueIdentifier>
             <Extensions>cpp;c</Extensions>
         </Filter>
         <Filter Include="Resource Files">
-            <UniqueIdentifier>{6DBD3F61-F00E-4F88-BB17-84DC8E5A26A8}</UniqueIdentifier>
+            <UniqueIdentifier>{60914306-C1CB-43F8-98D0-0169FDC79394}</UniqueIdentifier>
             <Extensions>hlsl;jpg;jpeg;png;wav;mp3;ico;dds;rc;obj</Extensions>
         </Filter>
     </ItemGroup>
@@ -37,6 +37,9 @@
             <Filter>Source Files</Filter>
         </ClCompile>
         <ClCompile Include="..\..\..\src\P2-Ex01\pch.cpp">
+            <Filter>Source Files</Filter>
+        </ClCompile>
+        <ClCompile Include="..\..\..\src\P2-Ex01\Player.cpp">
             <Filter>Source Files</Filter>
         </ClCompile>
         <ClCompile Include="..\..\..\src\P2-Ex01\Queen.cpp">
@@ -67,6 +70,9 @@
             <Filter>Header Files</Filter>
         </ClInclude>
         <ClInclude Include="..\..\..\src\P2-Ex01\pch.h">
+            <Filter>Header Files</Filter>
+        </ClInclude>
+        <ClInclude Include="..\..\..\src\P2-Ex01\Player.h">
             <Filter>Header Files</Filter>
         </ClInclude>
         <ClInclude Include="..\..\..\src\P2-Ex01\Queen.h">

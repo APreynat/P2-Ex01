@@ -63,7 +63,7 @@ bool Board::isPathClear(int fromRow, int fromCol, int toRow, int toCol) const {
     return true;  // Path is clear
 }
 
-bool Board::movePiece(std::string fromPosition, std::string toPosition) {
+bool Board::movePiece(string fromPosition, string toPosition) {
     int fromRow, fromCol, toRow, toCol;
 
     // Get the indices for both the starting and destination positions
@@ -73,13 +73,13 @@ bool Board::movePiece(std::string fromPosition, std::string toPosition) {
 
         // Check if there is a piece at the "from" position
         if (piece == nullptr) {
-            std::cout << "No piece at " << fromPosition << std::endl;
+            cout << "No piece at " << fromPosition << endl;
             return false;
         }
 
         // Check if the destination is occupied by a piece of the same color
         if (destinationPiece != nullptr && destinationPiece->getColor() == piece->getColor()) {
-            std::cout << "Cannot move to " << toPosition << ". A piece of the same color is already there." << std::endl;
+            cout << "Cannot move to " << toPosition << ". A piece of the same color is already there." << endl;
             return false;  // Prevent further checks and return early
         }
 
@@ -92,12 +92,12 @@ bool Board::movePiece(std::string fromPosition, std::string toPosition) {
             return true;
         }
         else {
-            std::cout << "Invalid move for " << piece->getSymbol() << std::endl;
+            cout << "Invalid move for " << piece->getSymbol() << endl;
             return false;
         }
     }
     else {
-        std::cout << "Invalid position input." << std::endl;
+        cout << "Invalid position input." << endl;
         return false;
     }
 }

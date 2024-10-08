@@ -1,30 +1,27 @@
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35312.102
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30319.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "P2-Ex01", "P2-Ex01\P2-Ex01.vcxproj", "{C1C703E9-682F-4056-A5A7-4C335A2E549D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "P2-Ex01", "P2-Ex01/P2-Ex01.vcxproj", "{5A93650C-D40D-435D-84D8-DEECD56C5F01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
-		Demo|x64 = Demo|x64
-		Lite|x64 = Lite|x64
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1C703E9-682F-4056-A5A7-4C335A2E549D}.Debug|x64.ActiveCfg = Debug|x64
-		{C1C703E9-682F-4056-A5A7-4C335A2E549D}.Debug|x64.Build.0 = Debug|x64
-		{C1C703E9-682F-4056-A5A7-4C335A2E549D}.Demo|x64.ActiveCfg = Demo|x64
-		{C1C703E9-682F-4056-A5A7-4C335A2E549D}.Demo|x64.Build.0 = Demo|x64
-		{C1C703E9-682F-4056-A5A7-4C335A2E549D}.Lite|x64.ActiveCfg = Lite|x64
-		{C1C703E9-682F-4056-A5A7-4C335A2E549D}.Lite|x64.Build.0 = Lite|x64
-		{C1C703E9-682F-4056-A5A7-4C335A2E549D}.Release|x64.ActiveCfg = Release|x64
-		{C1C703E9-682F-4056-A5A7-4C335A2E549D}.Release|x64.Build.0 = Release|x64
+		{5A93650C-D40D-435D-84D8-DEECD56C5F01}.Debug|x64.ActiveCfg = Debug|x64
+		{5A93650C-D40D-435D-84D8-DEECD56C5F01}.Debug|x64.Build.0 = Debug|x64
+		{5A93650C-D40D-435D-84D8-DEECD56C5F01}.Release|x64.ActiveCfg = Release|x64
+		{5A93650C-D40D-435D-84D8-DEECD56C5F01}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7FBE5F34-19ED-473E-87C5-1C7BD141E16F}
+		SolutionGuid = {EEF6C208-E69B-4696-BFD4-47213BDA70F2}
 	EndGlobalSection
 EndGlobal

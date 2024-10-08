@@ -1,9 +1,5 @@
+#pragma once
 #include "pch.h"
-
-#include <iostream>
-#include <vector>
-#include <map>
-#include <string>
 
 
 class Board {

@@ -1,58 +1,43 @@
 #include "pch.h"
 #include "Pawn.h"
 
-Pawn::Pawn(char color, string position) : ChessPiece (color, 'P', position) {}
+// Helper function to convert position string (e.g., "E2") to row and column indices
+bool getPositionIndices(string position, int& row, int& col) {
+    if (position.length() != 2) return false;
 
-#include <iostream>  // For debug output
+    col = position[0] - 'A';
+    row = 8 - (position[1] - '1' + 1);
+
+    return (col >= 0 && col < 8 && row >= 0 && row < 8);
+}
 
 bool Pawn::isValidMove(string newPosition, ChessPiece* grid[8][8]) const {
+    int fromRow, fromCol, toRow, toCol;
 
-    // Extract current position row and column
-    int currentRow = position[1] - '1';
-    int currentCol = position[0] - 'A';
+    // Use helper function to convert the positions
+    getPositionIndices(position, fromRow, fromCol);
+    getPositionIndices(newPosition, toRow, toCol);
 
-    // Extract new position row and column
-    int newRow = newPosition[1] - '1';
-    int newCol = newPosition[0] - 'A';
+    // Check the movement direction based on color
+    int rowDirection = (color == 'W') ? -1 : 1;  // White moves up (-1), Black moves down (+1)
 
-    // Calculate the difference between current and new positions
-    int rowDiff = (newRow - currentRow);
-    int colDiff = abs(newCol - currentCol);
-
-    // Debug output to trace the move details
-    std::cout << "Pawn moving from (" << currentRow << "," << currentCol << ") to ("
-        << newRow << "," << newCol << ") with rowDiff: " << rowDiff << " and colDiff: " << colDiff << "\n";
-
-    // Check for a one-cell forward move (rowDiff == 1) and column stays the same
-    if (colDiff == 0) {
-        // Single square move forward
-        if (rowDiff == 1 && grid[newRow][newCol] == nullptr) {
-            return true;  // Move one square forward is valid if the square is empty
-        }
-
-        // Two squares move forward (only from the starting row: index 6 for white pawns)
-        if (rowDiff == 2 && currentRow == 6) {
-            // Check if both the square in front and the target square are empty
-            std::cout << "Checking two-square move...\n";
-            if (grid[currentRow + 1][currentCol] == nullptr) {
-                std::cout << "Square in front is empty.\n";
-            }
-            else {
-                std::cout << "Square in front is NOT empty.\n";
-            }
-
-            if (grid[newRow][newCol] == nullptr) {
-                std::cout << "Target square is empty.\n";
-            }
-            else {
-                std::cout << "Target square is NOT empty.\n";
-            }
-
-            if (grid[currentRow + 1][currentCol] == nullptr && grid[newRow][newCol] == nullptr) {
-                return true;  // Move two squares forward is valid if both squares are empty
-            }
-        }
+    // Standard pawn move: one step forward
+    if (toCol == fromCol && toRow == fromRow + rowDirection && grid[toRow][toCol] == nullptr) {
+        return true;
     }
 
-    return false;  // Invalid move
+    // First move: two steps forward
+    if (toCol == fromCol && toRow == fromRow + 2 * rowDirection && getHasMoved()==false && grid[toRow][toCol] == nullptr && grid[fromRow + rowDirection][toCol] == nullptr) {
+        return true;
+    }
+
+    // Capture: move diagonally to capture an opponent's piece
+    if (abs(toCol - fromCol) == 1 && toRow == fromRow + rowDirection && grid[toRow][toCol] != nullptr && grid[toRow][toCol]->getColor() != color) {
+        return true;
+    }
+
+    // Invalid move
+    return false;
 }
+
+
