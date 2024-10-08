@@ -2,7 +2,12 @@
 #include "board.h"
 
 Board::Board() {
-    grid.resize(8, vector<ChessPiece*>(8, nullptr)); // Empty board with nullptr
+    // Initialize the board with nullptr for empty squares
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            grid[i][j] = nullptr;
+        }
+    }
 }
 
 // Destructor to clean up allocated memory for chess pieces
@@ -33,7 +38,31 @@ void Board::placePiece(ChessPiece* piece, string position) {
     }
 }
 
-// Move a chess piece from one position to another
+bool Board::isPathClear(int fromRow, int fromCol, int toRow, int toCol) const {
+    // Check if it's a horizontal move
+    if (fromRow == toRow) {
+        int step = (fromCol < toCol) ? 1 : -1;  // Move left or right
+        for (int col = fromCol + step; col != toCol; col += step) {
+            if (grid[fromRow][col] != nullptr) {
+                return false;  // There's a piece in the way
+            }
+        }
+    }
+    // Check if it's a vertical move
+    else if (fromCol == toCol) {
+        int step = (fromRow < toRow) ? 1 : -1;  // Move up or down
+        for (int row = fromRow + step; row != toRow; row += step) {
+            if (grid[row][fromCol] != nullptr) {
+                return false;  // There's a piece in the way
+            }
+        }
+    }
+    // For now, this function only supports straight-line (rook-like) movements
+    // Additional checks for diagonal movement (bishop-like) can be added here
+
+    return true;  // Path is clear
+}
+
 bool Board::movePiece(std::string fromPosition, std::string toPosition) {
     int fromRow, fromCol, toRow, toCol;
 
@@ -54,8 +83,8 @@ bool Board::movePiece(std::string fromPosition, std::string toPosition) {
             return false;  // Prevent further checks and return early
         }
 
-        // Check if the move is valid for this piece (destination can be empty or have an opponent's piece)
-        if (piece->isValidMove(toPosition)) {
+        // Check if the move is valid for this piece, passing the grid for validation
+        if (piece->isValidMove(toPosition, grid)) {
             delete grid[toRow][toCol];  // Remove any existing piece at the target (if it's an opponent's piece)
             grid[toRow][toCol] = piece;  // Place the piece at the new position
             grid[fromRow][fromCol] = nullptr;  // Set the old position to empty
@@ -76,8 +105,13 @@ bool Board::movePiece(std::string fromPosition, std::string toPosition) {
 // Convert the position string (e.g., "E2") to row and column indices
 bool Board::getPositionIndices(string position, int& row, int& col) const {
     if (position.length() != 2) return false;
-    col = position[0] - 'A';  // Convert column letter to an index (A=0, B=1, ..., H=7)
-    row = 8 - (position[1] - '1' + 1);  // Convert row number to an index (1=7, 2=6, ..., 8=0)
+
+    // Convert column letter to index ('A' = 0, 'B' = 1, ..., 'H' = 7)
+    col = position[0] - 'A';
+
+    // Convert row number to index (row '1' = index 7, row '8' = index 0)
+    row = 8 - (position[1] - '1' + 1);
+
     return (col >= 0 && col < 8 && row >= 0 && row < 8);
 }
 

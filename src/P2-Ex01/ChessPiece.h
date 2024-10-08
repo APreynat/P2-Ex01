@@ -16,7 +16,7 @@ public:
     string getPosition() const;
 
     // Virtual method to check if a move is valid
-    virtual bool isValidMove(string newPosition) const = 0;
+    virtual bool isValidMove(string newPosition, ChessPiece* grid[8][8]) const = 0;
 
     // Move the piece to a new position
     void move(string newPosition);

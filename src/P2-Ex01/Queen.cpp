@@ -3,7 +3,7 @@
 
 Queen::Queen(char color, string position) : ChessPiece(color, 'Q', position) {}
 
-bool Queen::isValidMove(string newPosition) const {
+bool Queen::isValidMove(string newPosition, ChessPiece* grid[8][8]) const {
 
     // Extract current position row and column
     int currentRow = position[1] - '1';

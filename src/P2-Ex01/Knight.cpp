@@ -3,7 +3,7 @@
 
 Knight::Knight(char color, string position): ChessPiece(color, 'L', position) {}
 
-bool Knight::isValidMove(string newPosition) const {
+bool Knight::isValidMove(string newPosition, ChessPiece* grid[8][8]) const {
 
     // Extract current position row and column
     int currentRow = position[1] - '1';

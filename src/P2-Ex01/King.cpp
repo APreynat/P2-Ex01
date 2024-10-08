@@ -3,7 +3,7 @@
 
 King::King(char color, string position) : ChessPiece(color, 'K', position) {}
 
-bool King::isValidMove(std::string newPosition) const {
+bool King::isValidMove(string newPosition, ChessPiece* grid[8][8]) const {
     int currentRow = position[1] - '1';
     int currentCol = position[0] - 'A';
 

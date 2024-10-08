@@ -3,7 +3,7 @@
 
 Bishop::Bishop(char color, string position): ChessPiece(color, 'B', position) {}
 
-bool Bishop::isValidMove(string newPosition) const {
+bool Bishop::isValidMove(string newPosition, ChessPiece* grid[8][8]) const {
 
     // Extract current position row and column
     int currentRow = position[1] - '1';
